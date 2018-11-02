@@ -60,11 +60,12 @@ function connect(client: SocketIO.Socket) {
 }
 
 function initialize() {
+    const PORT = process.env.PORT || '5000';
     app.koa.use(koa_static(__dirname + '/../public'))
     app.server = Http.createServer(app.koa.callback())
     app.io = SocketIO(app.server)
     app.io.on('connection', connect)
-    app.server.listen(app.port)
+    app.server.listen(PORT)
     console.log(`Listening on http://localhost:${PORT}/`)
 }
 
