@@ -65,7 +65,7 @@ function initialize() {
     app.io = SocketIO(app.server)
     app.io.on('connection', connect)
     app.server.listen(app.port)
-    console.log(`Listening on http://localhost:${app.port}/`)
+    console.log(`Listening on http://localhost:${PORT}/`)
 }
 
 initialize()
